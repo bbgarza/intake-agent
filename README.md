@@ -4,20 +4,20 @@ A small terminal tool that turns a vague data request ("we need a report on supp
 
 ## Why this exists
 
-I ran intake for an analytics org. Most requests showed up as one line in Slack or a ticket, with no context. Before anyone could start, someone had to go back and ask the same questions every time: What problem are you solving? Who will use this? What data does it need, and does that data exist? What's out of scope? How will we know it worked?
+On analytics teams, most requests arrive as one line in Slack or a ticket, with no context. Before work can start, someone has to go back and ask the same questions every time: What problem are you solving? Who will use this? What data does it need, and does that data exist? What's out of scope? How will we know it worked?
 
-That back-and-forth was slow and uneven. Some requests got a thorough intake and some got none, and work often started before anyone understood the ask. This tool does that intake the same way every time:
+That back-and-forth is slow and easy to do unevenly. Some requests get a thorough intake and some get none, and work can start before anyone understands the ask. This tool runs the intake the same way every time:
 
 1. Take the rough request.
 2. Ask clarifying questions in grouped batches, not one at a time.
-3. Stop once the fields are filled.
+3. Fill every field, or mark it OPEN.
 4. Produce a clean brief.
 
 One rule holds throughout: **it never invents details.** Anything the requester doesn't know gets marked `OPEN` and listed in the brief, so gaps can be seen instead of guessed over.
 
 ## How to run it
 
-You need Python 3 (macOS includes it). No installs or API keys.
+You need Python 3. On a Mac, it comes with Apple's command line tools. No other installs or API keys.
 
 ```bash
 python3 intake.py
@@ -85,7 +85,13 @@ It will then ask targeted follow-up questions. The no-invention rule stays: the 
 ## Project files
 
 ```
-intake.py   # the intake script
-spec.md     # design spec: purpose, loop, brief fields, guardrail
-briefs/     # generated briefs (kept out of git)
+intake.py    # the intake script
+spec.md      # design spec: purpose, loop, brief fields, guardrail
+README.md    # this file
+.gitignore   # files git leaves out (generated briefs, secrets, system files)
+briefs/      # generated briefs (kept out of git)
 ```
+
+## How this was built
+
+Built with Claude Code as a hands-on project in AI-assisted development. I wrote the spec and made the design calls; Claude Code wrote most of the code.
