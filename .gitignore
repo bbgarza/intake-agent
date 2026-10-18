@@ -1,0 +1,19 @@
+# Generated briefs (output from running intake.py; may contain real request details)
+briefs/
+
+# Secrets and keys (not used in v1, but v2 will need an API key)
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+credentials*
+
+# Python leftovers
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS folder metadata
+.DS_Store
